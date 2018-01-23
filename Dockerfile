@@ -6,5 +6,7 @@ RUN yum -y install nodejs
 
 RUN chown -R 1001:0 $HOME && \
     chmod -R g+rw $HOME
+    
+RUN cp google-chrome.repo /etc/yum.repos.d/google-chrome.repo && yum install google-chrome-stable
 
 USER 1001
