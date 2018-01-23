@@ -10,4 +10,7 @@ RUN chown -R 1001:0 $HOME && \
 COPY google-chrome.repo /etc/yum.repos.d/ 
 RUN yum -y install google-chrome-stable
 
+RUN chgrp -R 0 /opt/google
+RUN chmod -R g+rw /opt/google
+
 USER 1001
